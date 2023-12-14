@@ -14,7 +14,7 @@
             case "candidat" : userController::candidat(); break;
             case "offer" : jobController::offer(); break;
             case "applyOffer" : jobController::applyOffer(); break;
-            case "deletJob" : $offerid=$_GET['deletJob']; jobController::deletOffer($offerid); break;
+            case "deletJob" : jobController::deletOffer(); break;
             
         }
     }else

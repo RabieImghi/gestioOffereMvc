@@ -37,7 +37,8 @@ Class jobController{
         $result=Job::UpdateJobs($title,$description,$entreprise,$location,$IsActive,$approve,$id_Jobs);
         if($result) jobController::offer();
     }
-    public static function deletOffer($offerid){
+    public static function deletOffer(){
+        $offerid=$_GET['deletJob'];
         $result =Job::DeletJob($offerid);
         if($result) jobController::offer();
     }
