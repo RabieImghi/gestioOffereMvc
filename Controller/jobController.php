@@ -33,15 +33,32 @@ Class jobController{
         require_once "view/admin/offreCrud.php";
     }
     public static function updateJobs(){
-        $listJobs =Job::GetJobs(3);
-        $tempActiveTable=[0=>"In Active",1=>"Active" ];
-        $tempAprouveTable=[0=>"In Aprouve",1=>"Aprouve"];
         extract($_POST);
         $result=Job::UpdateJobs($title,$description,$entreprise,$location,$IsActive,$approve,$id_Jobs);
-        if($result) require_once "view/admin/offreCrud.php";
+        if($result) jobController::offer();
     }
     public static function deletOffer($offerid){
         $result =Job::DeletJob($offerid);
-        if($result) require_once "view/admin/offreCrud.php";
-    } 
+        if($result) jobController::offer();
+    }
+    public static function addOfferCrud(){
+        extract($_POST);
+        $currentDateTime = date("Y_m_d_H_i_s");
+        $targetDir = "assest/uploads/"; 
+        $imageName=$currentDateTime. basename($_FILES["photo"]["name"]);
+        $targetFile = $targetDir.$imageName;
+        if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile)) {
+            $result = Job::AddJobs($title,$description,$entreprise,$location,$IsActive,$approve,$imageName);
+            if($result) jobController::offer();
+        } 
+    }
+    public static function applyOffer(){
+        $listApplyOnline = ApplyOnline::getApplyOnline(0);
+        require_once "view/admin/offre.php";
+    }
+    public static function aprouve_decline($status){
+        $idOffer= $_POST["idOffer"];
+        $result=ApplyOnline::AprouvOffer($idOffer,$status);
+        if($result) jobController::applyOffer();
+    }
 }

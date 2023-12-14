@@ -37,7 +37,7 @@
                         <a href="index.php?action=adminDash" class="sidebar_link"><img src="assest/img/agent.svg" alt="icon">Contact</a>
                     </li>
                     <li class="sidebar_item">
-                        <a href="index.php?action=adminDash" class="sidebar_link"><img src="assest/img/articles.svg" alt="icon">Offre To Apply</a>
+                        <a href="index.php?action=applyOffer" class="sidebar_link"><img src="assest/img/articles.svg" alt="icon">Offre To Apply</a>
                     </li>
 
                 </ul>

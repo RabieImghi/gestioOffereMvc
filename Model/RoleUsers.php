@@ -1,5 +1,5 @@
 <?php
-require_once "Connection.php";
+require_once "Autoloader.php";
 class RoleUsers {
     public static function GetRoles(){
         $conn = Connection::getConnection();

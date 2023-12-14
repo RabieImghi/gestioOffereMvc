@@ -28,7 +28,7 @@ ob_start();
         ?>
         <article class="postcard light green">
             <a class="postcard__img_link" href="#">
-                <img class="postcard__img" src="uploads/<?=$job['imageURL']?>" alt="Image Title" />
+                <img class="postcard__img" src="assest/uploads/<?=$job['imageURL']?>" alt="Image Title" />
             </a>
             <div class="postcard__text t-dark">
                 <h3 class="postcard__title green"><a href="#"><?=$job["title"]?></a></h3>

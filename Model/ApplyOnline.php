@@ -1,6 +1,5 @@
 <?php
-require_once "Connection.php";
-require_once "Job.php";
+require_once "Autoloader.php";
 class ApplyOnline {
     public static function applyOffre($idJob,$idUser){
         $conn = Connection::getConnection();

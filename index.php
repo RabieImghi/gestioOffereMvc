@@ -13,8 +13,8 @@
             case "adminDash" : userController::admin(); break;
             case "candidat" : userController::candidat(); break;
             case "offer" : jobController::offer(); break;
+            case "applyOffer" : jobController::applyOffer(); break;
             case "deletJob" : $offerid=$_GET['deletJob']; jobController::deletOffer($offerid); break;
-            
             
         }
     }else
@@ -24,6 +24,9 @@
             case "login" : userController::loginUser(); break;
             case "updateUser" : userController::updateUser(); break;
             case "updateJobs" : jobController::updateJobs(); break;
+            case "addOfferCrud" : jobController::addOfferCrud(); break;
+            case "aprouve" : jobController::aprouve_decline(1); break;
+            case "decline" : jobController::aprouve_decline(2); break;
             
         }
     }else{

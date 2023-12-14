@@ -1,5 +1,5 @@
 <?php
-require_once "Connection.php";
+require_once "Autoloader.php";
 class User {
     public static function Registre($name,$email,$password,$passwordConfirm,$roleuserID){
         $conn = Connection::getConnection();

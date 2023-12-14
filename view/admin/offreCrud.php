@@ -48,7 +48,7 @@ ob_start();
                 <td class="f_position"><?php echo ($job['IsActive']==1)? "Active":"In Active"; ?> </td>
                 <td class="f_position"><?php echo ($job['approve']==1)? "Aprouve":"In Aprouve"; ?> </td>
                 <td>
-                    <a href="index.php?deletJob=<?=$job['jobID']?>&action=deletJob"><img class="delet_user" src="assest/img/user-x.svg" alt=""></a>
+                    <a href="index.php?deletJob=<?=$job['jobID']?>&action=deletJob"><img src="assest/img/user-x.svg" alt=""></a>
                     <img class="ms-2 edit" data-bs-toggle="modal" data-bs-target="#edit<?=$indic?>" src="assest/img/edit.svg" alt="">
                 </td>
                 <div class="modal fade" id="edit<?=$indic?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -133,7 +133,7 @@ ob_start();
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="forms" method='POST' enctype="multipart/form-data" action="../Controller/controller.php">
+                <form id="forms" method='POST' enctype="multipart/form-data" action="index.php">
                     <div class="row mb-4">
                         <div class="">
                             <input  type="file" name='photo'   class="form-control first_name" >
@@ -175,7 +175,7 @@ ob_start();
                         </select>
                     </div>
                     <div class="d-flex w-100 justify-content-center">
-                        <button type="submit" name='addOffer' value='' class="btn btn-success  mb-4 me-4">Add</button>
+                        <button type="submit" name='submit' value='addOfferCrud' value='' class="btn btn-success  mb-4 me-4">Add</button>
                         <button class="btn btn-danger btn-block mb-4 " data-bs-dismiss="modal">Annuler</button>
                     </div>
                 </form>
