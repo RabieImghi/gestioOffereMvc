@@ -4,28 +4,37 @@ ob_start();
 <section action="#" method="get" class="search">
     <h2>Find Your Dream Job</h2>
     <form class="form-inline">
-        <div class="form-group mb-2">
-            <input type="text" id='title' onkeyup="search('title')" name="keywords" placeholder="Keywords">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Search by Title Job</span>
+            </div>
+            <input type="text" class="form-control" id='title' onkeyup="search('title')" aria-describedby="basic-addon3">
         </div>
-        <div class="form-group mx-sm-3 mb-2">
-            <input type="text" id='location' onkeyup="search('location')" name="company" placeholder="Location">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Search by Location Job</span>
+            </div>
+            <input type="text" class="form-control"  id='location' onkeyup="search('location')" aria-describedby="basic-addon3">
         </div>
-        <div class="form-group mx-sm-3 mb-2">
-            <input type="text"  id='entreprise' onkeyup="search('entreprise')" name="location" placeholder="Company">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Search by Entreprise Job</span>
+            </div>
+            <input type="text" class="form-control" id='entreprise' onkeyup="search('entreprise')" aria-describedby="basic-addon3">
         </div>
         <!-- <button type="submit" class="btn btn-primary mb-2">Search</button> -->
     </form>
 </section>
-
-<section class="light">
+   
+<section >
     <h2 class="text-center py-3">Latest Job Listings</h2>
-    <div class="container py-2" id="articles">
+    <div class="container py-2 gridArticle" id="articles">
         <?php
         foreach($listJobs as $job){
         ?>
         <article class="postcard light green">
             <a class="postcard__img_link" href="#">
-                <img class="postcard__img" src="assest/uploads/<?=$job['imageURL']?>" alt="Image Title" />
+                <img class="postcard__img" style='width:300px' src="assest/uploads/<?=$job['imageURL']?>" alt="Image Title" />
             </a>
             <div class="postcard__text t-dark">
                 <h3 class="postcard__title green"><a href="#"><?=$job["title"]?></a></h3>
@@ -37,9 +46,9 @@ ob_start();
                 <div class="postcard__bar"></div>
                 <div class="postcard__preview-txt"><?=$job["description"]?></div>
                 <ul class="postcard__tagbox">
-                    <li class="tag__item">Enreprise : <?=$job["entreprise"]?></li>
-                    <li class="tag__item">Location : <?=$job["location"]?></li>
-                    <li class="tag__item play green">
+                    <li class="tag__item"> <img src="assest/img/office-building.png" style='width:20px;margin-right:10px' alt=""><?=$job["entreprise"]?></li>
+                    <li class="tag__item"><img src="assest/img/location.png" style='width:20px;margin-right:10px' alt=""><?=$job["location"]?></li>
+                    <li class=>
                     <?php
                     if($job["approve"]==1){
                         echo "<span style='color:red'>Already aprouved</span>";
@@ -85,6 +94,7 @@ ob_start();
                         title: "Oops...",
                         text: "Errore ! You have Already Apply this Offer",
                     });
+                    
                 }
                 // console.log(xml.responseText);
             }
