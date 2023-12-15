@@ -162,16 +162,16 @@ ob_start();
                     <div class="mb-4">
                         <label class="form-label" >Role User</label>
                         <select name="IsActive" class="form-control email" id="">
-                            <option value="0">Is Active</option>
-                            <option value="1">Inactive</option>
+                            <option value="0">non Active</option>
+                            <option value="1" selected>Active</option>
                         
                         </select>
                     </div>
                     <div class="mb-4">
                         <label class="form-label" >Role User</label>
                         <select name="approve" class="form-control email" id="">
-                            <option value="0">Is Approve</option>
-                            <option value="1">Inapprove</option>
+                            <option value="0" selected>Non Approve</option>
+                            <option value="1">Aprouve</option>
                         </select>
                     </div>
                     <div class="d-flex w-100 justify-content-center">

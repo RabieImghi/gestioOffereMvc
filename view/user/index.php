@@ -15,9 +15,6 @@ ob_start();
         </div>
         <!-- <button type="submit" class="btn btn-primary mb-2">Search</button> -->
     </form>
-    <script>
-        
-    </script>
 </section>
 
 <section class="light">
@@ -43,25 +40,23 @@ ob_start();
                     <li class="tag__item">Enreprise : <?=$job["entreprise"]?></li>
                     <li class="tag__item">Location : <?=$job["location"]?></li>
                     <li class="tag__item play green">
-                        <?php
-                        if($job["approve"]==1){
-                            echo "<span style='color:red'>Already aprouved</span>";
+                    <?php
+                    if($job["approve"]==1){
+                        echo "<span style='color:red'>Already aprouved</span>";
+                    }else{
+                        if(isset($_SESSION['idUser'])){
+                    ?>
+                        <form>
+                            <button type='button' name='applyOffre'  onclick="addOffer(<?=$job['jobID']?>)" class="btn btn-success">Add Offer</button>   
+                        </form>   
+                    <?php
                         }else{
-                            if(isset($_SESSION['idUser'])){
-                        ?>
-                            <form >
-                                <button type='button' name='applyOffre'  onclick="addOffer(<?=$job['jobID']?>)" class="btn btn-success">Add Offer</button>   
-                            </form>    
-                            
-                            <?php
-                            }else{
-                            ?>       
-                            <a href="index.php?action=login" class="btn btn-success">Add Offer</a>
-                            <?php } ?>
-                        <?php
+                    ?>       
+                        <a href="index.php?action=login" class="btn btn-success">Add Offer</a>
+                    <?php 
                         }
-                        ?>
-                        
+                    }
+                    ?>
                     </li>
                 </ul>
             </div>

@@ -7,7 +7,9 @@
             case "home": jobController::listJob(); break;
             case "login": userController::login(); break;
             case "logout": userController::logout();  break;
+            // --------------------
             case "addOffer": jobController::addOffer();  break;
+            // --------------------
             case "searchJob" : jobController::searchJob(); break;
             case "notification" : userController::notification(); break;
             case "adminDash" : userController::admin(); break;
