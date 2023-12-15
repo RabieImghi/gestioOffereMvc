@@ -30,7 +30,8 @@ Class userController{
         include_once 'view/admin/dashboard.php';
     }
     public static function notification(){
-        $jobsNotif=ApplyOnline::getNotefication($_SESSION['idUser']);
+        $id_user=$_SESSION['idUser'];
+        $jobsNotif=ApplyOnline::getNotefication($id_user);
         include_once "view/user/not.php";
     } 
     public static function candidat(){

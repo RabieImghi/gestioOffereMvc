@@ -50,7 +50,7 @@ ob_start();
                             if(isset($_SESSION['idUser'])){
                         ?>
                             <form >
-                                <button type='button' name='applyOffre' id='applyOffre<?=$job['jobID']?>' onclick="addOffer(<?=$job['jobID']?>)" value='<?=$_SESSION['idUser']?>/<?=$job["jobID"]?>' class="btn btn-success">Add Offer</button>   
+                                <button type='button' name='applyOffre'  onclick="addOffer(<?=$job['jobID']?>)" class="btn btn-success">Add Offer</button>   
                             </form>    
                             
                             <?php
@@ -72,8 +72,7 @@ ob_start();
     </div>
 </section>
 <script>
-    function addOffer(i){
-        var jobid = document.getElementById('applyOffre'+i);
+    function addOffer(idOffer){
         var xml = new XMLHttpRequest();
         xml.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -95,7 +94,7 @@ ob_start();
                 // console.log(xml.responseText);
             }
         };
-        let url = "index.php?applyOffre="+jobid.value+"&action=addOffer";
+        let url = "index.php?applyOffre="+idOffer+"&action=addOffer";
         xml.open("GET", url, true);
         xml.send();
     }

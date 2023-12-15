@@ -6,10 +6,8 @@ Class jobController{
         include_once "view/user/index.php";
     }
     public static function addOffer(){
-        $Job=$_GET['applyOffre']; 
-        $JobOffer = explode("/",$Job);
-        $idUser=$JobOffer[0];
-        $idJob=$JobOffer[1];
+        $idJob=$_GET['applyOffre'];
+        $idUser=$_SESSION['idUser'];
         $res = ApplyOnline::applyOffre($idJob,$idUser);
         if($res) echo "ok";
         else echo "non";
