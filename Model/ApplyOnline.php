@@ -4,21 +4,14 @@ class ApplyOnline {
     public static function applyOffre($idJob,$idUser){
         $conn = Connection::getConnection();
         $stmt = $conn->prepare("SELECT * FROM applyonline WHERE userID=? AND jobID =?");
-        $stmt->bindParam(1, $idUser);
-        $stmt->bindParam(2, $idJob);
-        $stmt->execute();
+        $stmt->execute([$idUser,$idJob]);
         $numRows = $stmt->rowCount();
         if($numRows==0) {
             $status=0;
             $stmt2=$conn->prepare("INSERT INTO applyonline (userID,jobID,Status,notification) VALUE (?,?,?,?)");
             $notification=0;
-            $stmt2->bindParam(1,$idUser);
-            $stmt2->bindParam(2,$idJob);
-            $stmt2->bindParam(3,$status);
-            $stmt2->bindParam(4,$notification);
-            $result=$stmt2->execute();
+            $result=$stmt2->execute([$idUser,$idJob,$status,$notification]);
             if($result) return true;
-            else return false;
         }
         else return false;
     }
