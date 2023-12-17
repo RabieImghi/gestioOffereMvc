@@ -29,7 +29,7 @@
           <input type="submit" name="submit" value="login">
         </div>
         <span style="color:red;"></span>
-        <div class="signup-link">Not a member? <a href="register.php">Signup now</a></div>
+        <div class="signup-link">Not a member? <a href="index.php?action=registre">Signup now</a></div>
       </form>
     </div>
   </div>

@@ -75,6 +75,30 @@ ob_start();
         ?>
     </div>
 </section>
+<style>
+            article{
+                padding:50px;
+                display: flex;
+                align-items:center;
+                gap:40px;
+                background: linear-gradient(to right, #6abdf468, #a0fac5) !important;
+            }
+            article ul {
+                display:flex !important;
+                gap:20px;
+                align-items:center;
+                list-style:none;
+                margin-top:20px
+            }
+            article ul li.tag__item{
+                background: white;
+                padding:7px;
+                border-radius:5px;
+            }
+            .postcard__text:before{
+                background: transparent !important;
+            }
+        </style>
 <script>
     function addOffer(idOffer){
         var xml = new XMLHttpRequest();

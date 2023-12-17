@@ -49,7 +49,7 @@ foreach($result as $job){
                 background: linear-gradient(to right, #6abdf468, #a0fac5) !important;
             }
             article ul {
-                display:flex;
+                display:flex !important;
                 gap:20px;
                 align-items:center;
                 list-style:none;

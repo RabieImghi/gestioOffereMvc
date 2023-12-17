@@ -1,7 +1,7 @@
 <?php
 require_once "Autoloader.php";
 if(isset($_SESSION['roleUser']) && $_SESSION['roleUser']==1){
-
+    $home=3;
 ob_start();
 ?>
 <section class="overview">

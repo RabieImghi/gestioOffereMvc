@@ -24,7 +24,7 @@
                 </div>
 
                 <ul class="sidebar_nav">
-                    <li class="sidebar_item actcive" style="width: 100%;">
+                    <li class="sidebar_item <?php isset($home)? 'active' : ''?>" style="width: 100%;">
                         <a href="index.php?action=adminDash" class="sidebar_link"> <img src="assest/img/1. overview.svg" alt="icon">Overview</a>
                     </li>
                     <li class="sidebar_item">

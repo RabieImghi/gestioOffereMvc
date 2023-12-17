@@ -4,6 +4,9 @@ Class userController{
     public static function login(){
         include_once "view/login.php";
     }
+    public static function registre(){
+        include_once "view/register.php";
+    }
     public static function logout(){
         session_destroy();
         $listJobs = Job::GetJobs(1);
